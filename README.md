@@ -1,11 +1,16 @@
 # uv-constraints-check
 
 Check `uv.lock`, installed Python environments, or executable scripts against
-constraints emitted by `security-constraints`.
+GitHub Security Advisories data:
+[GitHub Security Advisories](https://github.com/advisories).
 
 ## Prerequisites
 
-- install the `security-constraints` command and make sure it is available in your `PATH`
+- install the `security-constraints` command from
+  [mam-dev/security-constraints](https://github.com/mam-dev/security-constraints)
+  and make sure it is available in your `PATH`; this tool uses it to fetch the
+  GitHub security advisory data
+- `security-constraints` uses publicly available GitHub security advisory data, so a read-only GitHub token is sufficient
 - a GitHub personal access token must be set in `SC_GITHUB_TOKEN`
 
 Create the token in GitHub:

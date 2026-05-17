@@ -1,10 +1,16 @@
 # uv-constraints-check
 
-`security-constraints` が出力する制約に対して、`uv.lock`、インストール済みの Python 環境、実行可能スクリプトをチェックします。
+GitHub が公開するセキュリティアドバイザリデータ
+([GitHub Security Advisories](https://github.com/advisories)) に基づいて、
+`uv.lock`、インストール済みの Python 環境、実行可能スクリプトをチェックします。
 
 ## 前提条件
 
-- `security-constraints` コマンドをインストールし、`PATH` 上で使えること
+- `security-constraints` コマンドを
+  [mam-dev/security-constraints](https://github.com/mam-dev/security-constraints)
+  からインストールし、`PATH` 上で使えること。このツールは GitHub の
+  セキュリティアドバイザリデータの取得にそれを利用します
+- `security-constraints` は GitHub が公開するセキュリティアドバイザリデータを利用するので、読み取り専用の GitHub トークンで十分であること
 - GitHub の Personal Access Token を `SC_GITHUB_TOKEN` に設定していること
 
 GitHub でトークンを作成します:
