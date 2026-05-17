@@ -1,0 +1,17 @@
+/.agents/
+/.codex/
+/.serena/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.coverage
+.coverage.*
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+htmlcov/
+.python-version
+*.log

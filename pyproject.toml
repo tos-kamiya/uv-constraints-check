@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "uv-constraints-check"
+dynamic = ["version"]
+description = "Check uv.lock against constraints emitted by security-constraints."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Toshihiro Kamiya", email = "kamiya@mbj.nifty.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "packaging>=24.0",
+  "tomli>=2.0.1; python_version < '3.11'",
+]
+
+[project.urls]
+Documentation = "https://github.com/Toshihiro Kamiya/uv-constraints-check#readme"
+Issues = "https://github.com/Toshihiro Kamiya/uv-constraints-check/issues"
+Source = "https://github.com/Toshihiro Kamiya/uv-constraints-check"
+
+[tool.hatch.version]
+path = "src/uv_constraints_check/__about__.py"
+
+[project.scripts]
+uv-constraints-check = "uv_constraints_check.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/uv_constraints_check"]
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/uv_constraints_check tests}"
+
+[tool.coverage.run]
+source_pkgs = ["uv_constraints_check", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/uv_constraints_check/__about__.py",
+]
+
+[tool.coverage.paths]
+uv_constraints_check = ["src/uv_constraints_check", "*/uv-constraints-check/src/uv_constraints_check"]
+tests = ["tests", "*/uv-constraints-check/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
