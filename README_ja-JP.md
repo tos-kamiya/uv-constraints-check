@@ -1,16 +1,6 @@
 # uv-constraints-check
 
-[![PyPI - Version](https://img.shields.io/pypi/v/uv-constraints-check.svg)](https://pypi.org/project/uv-constraints-check)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/uv-constraints-check.svg)](https://pypi.org/project/uv-constraints-check)
-
------
-
-## 目次
-
-- [前提条件](#前提条件)
-- [インストール](#インストール)
-- [使い方](#使い方)
-- [ライセンス](#ライセンス)
+`security-constraints` が出力する制約に対して、`uv.lock`、インストール済みの Python 環境、実行可能スクリプトをチェックします。
 
 ## 前提条件
 

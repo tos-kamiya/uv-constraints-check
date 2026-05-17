@@ -1,16 +1,7 @@
 # uv-constraints-check
 
-[![PyPI - Version](https://img.shields.io/pypi/v/uv-constraints-check.svg)](https://pypi.org/project/uv-constraints-check)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/uv-constraints-check.svg)](https://pypi.org/project/uv-constraints-check)
-
------
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
+Check `uv.lock`, installed Python environments, or executable scripts against
+constraints emitted by `security-constraints`.
 
 ## Prerequisites
 
